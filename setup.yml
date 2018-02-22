@@ -1,0 +1,12 @@
+- hosts: localhost
+  roles:
+    - role: Comcast.sdkman
+      sdkman_auto_answer: yes
+      sdkman_install_packages:
+        - { candidate: java, version: 9.0.4-oracle }
+        - { candidate: maven, version: 3.5.2 }
+    - role: loliee.prezto
+      vars:
+        __users__:
+          ec2-user:
+            prezto_install: yes
